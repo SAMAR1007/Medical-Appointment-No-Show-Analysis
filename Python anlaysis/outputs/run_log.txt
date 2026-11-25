@@ -1,0 +1,146 @@
+== audit ==
+{
+ "rows": 110521,
+ "patients": 62298,
+ "appointment_date_min": "2016-04-29",
+ "appointment_date_max": "2016-06-08",
+ "age_min": 0,
+ "age_max": 115,
+ "age_over_100": 7,
+ "lead_min": 0,
+ "lead_max": 179,
+ "null_cells": 0,
+ "patient_id_precision_nulls": 5,
+ "duplicate_appointment_ids": 0,
+ "share_rows_same_patient_same_day": 0.14656038218981007,
+ "share_patients_with_repeat_visits": 0.3913127227198305,
+ "saturday_rows": 39
+}
+== overall ==
+{'no_show_rate': 0.2018982817745044, 'ci_low': 0.19954208156704473, 'ci_high': 0.20427520393840076, 'no_shows': 22314}
+== univariate ==
+        factor       test      chi2  dof  p_value  cramers_v  odds_ratio  or_ci_low  or_ci_high  p_adj_BH
+   lead_bucket chi-square 9596.4004    3   0.0000     0.2947         NaN        NaN         NaN    0.0000
+  SMS_received chi-square 1768.6531    1   0.0000     0.1265      1.8994     1.8429      1.9575    0.0000
+     age_group chi-square  698.3147    4   0.0000     0.0795         NaN        NaN         NaN    0.0000
+  hypertension chi-square  140.5607    1   0.0000     0.0357      0.7919     0.7618      0.8231    0.0000
+   Scholarship chi-square   94.0150    1   0.0000     0.0292      1.2604     1.2027      1.3209    0.0000
+       weekday chi-square   27.5924    5   0.0000     0.0158         NaN        NaN         NaN    0.0001
+      Diabetes chi-square   25.3925    1   0.0000     0.0152      0.8589     0.8095      0.9113    0.0000
+disability_any chi-square    6.2628    1   0.0123     0.0075      0.8706     0.7810      0.9705    0.0154
+        Gender chi-square    1.8869    1   0.1696     0.0041      0.9786     0.9489      1.0093    0.1884
+    Alcoholism chi-square    0.0036    1   0.9520     0.0002      0.9974     0.9155      1.0865    0.9520
+== continuous ==
+      variable  median_no_show  median_show  mean_no_show  mean_show            U  p_value  prob_superiority
+           Age            33.0         38.0       34.3179    37.7905  897472412.0      0.0            0.4560
+lead_time_days            11.0          2.0       15.8355     8.7548 1374365999.0      0.0            0.6983
+{'age': -0.06122525747212326, 'lead': 0.28184919950715537}
+== sms by lead ==
+lead_days     n  sms_share  rate_sms  rate_no_sms  n_sms  n_no_sms  usable_for_CMH
+        0 38562     0.0000       NaN       0.0465      0     38562           False
+      1-2 11938     0.0000       NaN       0.2274      0     11938           False
+      3-6 15341     0.5670    0.2307       0.2621   8698      6643            True
+     7-13 14018     0.5822    0.2741       0.3113   8161      5857            True
+    14-29 19580     0.6036    0.2965       0.3714  11818      7762            True
+      30+ 11082     0.6141    0.2992       0.3685   6805      4277            True
+{'crude_or': 1.8993657373443902, 'crude_ci': [1.8429191609176636, 1.957541210001547], 'rate_sms': 0.27574544839637, 'rate_no_sms': 0.16697983715134795, 'share_sms_when_lead_le_2': 0.0, 'share_sms_when_lead_ge_3': 0.591159760750404, 'mh_pooled_or': 0.7734063812447873, 'mh_ci': [0.7464055153938891, 0.8013839906240522], 'cmh_p': 0.0, 'breslow_day_p': 0.00037709902355342884, 'strata_used': 4}
+== neighbourhood ==
+{'n_neighbourhoods_ge100': 74, 'chi2': 493.01380949086627, 'p': 9.762671365155994e-61, 'dof': 80, 'cramers_v': 0.06678933805242344, 'n_significant_BH': 23, 'prior_strength_alpha_plus_beta': 270.4000904226819, 'highest': {'Neighbourhood': 'SANTOS DUMONT', 'n': 1276, 'rate': 0.2891849529780564, 'shrunk_rate': 0.27393586368587836}, 'lowest': {'Neighbourhood': 'SANTA MARTHA', 'n': 3131, 'rate': 0.15841584158415842, 'shrunk_rate': 0.16187876454881686}}
+    Neighbourhood    n  no_shows   rate  ci_low  ci_high  p_vs_overall  p_adj_BH  significant_BH  shrunk_rate  risk_rank
+    SANTOS DUMONT 1276       369 0.2892  0.2650   0.3147        0.0000    0.0000            True       0.2739          1
+          ITARARÉ 3514       923 0.2627  0.2484   0.2775        0.0000    0.0000            True       0.2583          2
+    SANTA CECÍLIA  448       123 0.2746  0.2353   0.3177        0.0003    0.0026            True       0.2472          3
+      SANTA CLARA  506       134 0.2648  0.2283   0.3049        0.0007    0.0052            True       0.2429          4
+JESUS DE NAZARETH 2853       696 0.2440  0.2285   0.2601        0.0000    0.0000            True       0.2403          5
+ ILHA DO PRÍNCIPE 2266       532 0.2348  0.2178   0.2527        0.0001    0.0016            True       0.2313          6
+        CARATOÍRA 2565       591 0.2304  0.2145   0.2471        0.0004    0.0037            True       0.2277          7
+       ANDORINHAS 2262       521 0.2303  0.2134   0.2481        0.0009    0.0059            True       0.2273          8
+  Neighbourhood    n  no_shows   rate  ci_low  ci_high  p_vs_overall  p_adj_BH  significant_BH  shrunk_rate  risk_rank
+      DO CABRAL  560        88 0.1571  0.1293   0.1896        0.0084    0.0282            True       0.1717         70
+ MÁRIO CYPRESTE  371        54 0.1456  0.1133   0.1851        0.0065    0.0282            True       0.1693         71
+   SOLON BORGES  469        69 0.1471  0.1179   0.1820        0.0027    0.0168            True       0.1672         72
+JARDIM DA PENHA 3877       631 0.1628  0.1515   0.1747        0.0000    0.0000            True       0.1653         73
+   SANTA MARTHA 3131       496 0.1584  0.1460   0.1716        0.0000    0.0000            True       0.1619         74
+== tiers ==
+   factor                 level     n  no_shows   rate  ci_low  ci_high  share_of_appointments
+risk_tier              Low Risk 15591      1404 0.0901  0.0857   0.0946                 0.1411
+risk_tier           Medium Risk  8420      1869 0.2220  0.2132   0.2310                 0.0762
+risk_tier             High Risk 20222      6197 0.3064  0.3001   0.3128                 0.1830
+risk_tier New Patient - Monitor 66288     12844 0.1938  0.1908   0.1968                 0.5998
+[{'level': 'New patient', 'n': 66288, 'no_shows': 12844, 'rate': 0.19376055998069033, 'ci_low': 0.1907695266786184, 'ci_high': 0.19678708501665343}, {'level': 'Prior no-show', 'n': 14114, 'no_shows': 3793, 'rate': 0.2687402578999575, 'ci_low': 0.2614904084805597, 'ci_high': 0.27611595867967165}, {'level': 'Prior visits, all attended', 'n': 30119, 'no_shows': 5677, 'rate': 0.18848567349513595, 'ci_low': 0.18410862802864272, 'ci_high': 0.1929421715895601}]
+== logit ==
+                                                      term  odds_ratio  ci_low  ci_high  p_value
+                               age_group: Child (vs Adult)      1.2794  1.2086   1.3544   0.0000
+                              age_group: Senior (vs Adult)      0.7599  0.7183   0.8038   0.0000
+                                age_group: Teen (vs Adult)      1.7636  1.6390   1.8976   0.0000
+                         age_group: Young Adult (vs Adult)      1.3694  1.3062   1.4356   0.0000
+            lead_bucket: Long Lead (8+ days) (vs Same Day)     11.8805 10.9732  12.8627   0.0000
+               lead_bucket: Short (1-3 Days) (vs Same Day)      6.8478  6.2853   7.4606   0.0000
+                  lead_bucket: Within a week (vs Same Day)      8.4809  7.7979   9.2237   0.0000
+                                          Gender: M (vs F)      1.0610  1.0201   1.1036   0.0032
+                              weekday: Tuesday (vs Monday)      0.9886  0.9401   1.0396   0.6552
+                            weekday: Wednesday (vs Monday)      0.9363  0.8875   0.9877   0.0157
+                             weekday: Thursday (vs Monday)      0.9141  0.8634   0.9678   0.0020
+                               weekday: Friday (vs Monday)      1.0033  0.9484   1.0615   0.9079
+                             weekday: Saturday (vs Monday)      1.2487  0.5764   2.7054   0.5733
+             history_group: Prior no-show (vs New patient)      1.4997  1.4146   1.5900   0.0000
+history_group: Prior visits, all attended (vs New patient)      0.9492  0.9127   0.9873   0.0093
+                                              SMS_received      0.7721  0.7442   0.8010   0.0000
+                                               Scholarship      1.2388  1.1646   1.3177   0.0000
+                                              hypertension      0.9634  0.9124   1.0174   0.1801
+                                                  Diabetes      1.1473  1.0645   1.2364   0.0003
+                                                Alcoholism      1.3507  1.2134   1.5037   0.0000
+                                            disability_any      1.0924  0.9101   1.3112   0.3426
+{'pseudo_r2_mcfadden': 0.11675439005946808, 'n': 110521, 'n_patients_clusters': 62298}
+== new-patient tier by lead ==
+     factor               level     n  no_shows   rate  ci_low  ci_high
+lead_bucket            Same Day 24117       904 0.0375  0.0352   0.0400
+lead_bucket    Short (1-3 Days)  7795      1844 0.2366  0.2273   0.2461
+lead_bucket       Within a week  9050      2270 0.2508  0.2420   0.2599
+lead_bucket Long Lead (8+ days) 25326      7826 0.3090  0.3033   0.3147
+== crude vs adjusted ==
+        factor  crude_or  crude_ci_low  crude_ci_high  adjusted_or  adj_ci_low  adj_ci_high  adj_p
+  SMS_received     1.899         1.843          1.958        0.772       0.744        0.801  0.000
+   Scholarship     1.260         1.203          1.321        1.239       1.165        1.318  0.000
+  hypertension     0.792         0.762          0.823        0.963       0.912        1.017  0.180
+      Diabetes     0.859         0.809          0.911        1.147       1.065        1.236  0.000
+    Alcoholism     0.997         0.916          1.087        1.351       1.213        1.504  0.000
+disability_any     0.871         0.781          0.970        1.092       0.910        1.311  0.343
+        Gender     0.979         0.949          1.009        1.061       1.020        1.104  0.003
+== neighbourhood adjusted ==
+{'lr_stat': 330.1905960912118, 'df': 74, 'p': 4.7189175394254e-34, 'pseudo_r2_without': 0.11675439005946808, 'pseudo_r2_with': 0.11972401948131439}
+== booking-time sensitivity ==
+{'auc_history_as_of_appointment_day': 0.7145815332055964, 'auc_history_known_at_booking': 0.7136634618743709} 0.12861809067959934
+== models ==
+                      model  roc_auc  auc_ci_low  auc_ci_high  pr_auc  brier  precision_top10pct  lift_top10pct  recall_top20pct
+SQL risk tiers (rule-based)   0.5942      0.5869       0.6017  0.2438 0.1556              0.2983         1.5007           0.2943
+        Logistic regression   0.7146      0.7075       0.7220  0.3409 0.1448              0.3830         1.9272           0.3560
+          Gradient boosting   0.7286      0.7205       0.7362  0.3604 0.1430              0.4030         2.0277           0.3747
+== deciles ==
+ decile    n  mean_predicted  observed   lift
+      1 2253          0.0300    0.0328 0.1653
+      2 2253          0.0424    0.0435 0.2188
+      3 2253          0.0498    0.0431 0.2166
+      4 2253          0.1106    0.1469 0.7392
+      5 2253          0.1986    0.2104 1.0585
+      6 2253          0.2402    0.2570 1.2930
+      7 2253          0.2700    0.2503 1.2595
+      8 2253          0.3067    0.2960 1.4895
+      9 2253          0.3464    0.3236 1.6280
+     10 2253          0.4182    0.3839 1.9317
+== importance ==
+           feature  auc_drop     sd
+    lead_time_days    0.2035 0.0039
+               Age    0.0285 0.0030
+     Neighbourhood    0.0118 0.0008
+prior_no_show_rate    0.0046 0.0008
+    prior_no_shows    0.0036 0.0004
+      SMS_received    0.0031 0.0005
+prior_appointments    0.0009 0.0004
+       weekday_num    0.0008 0.0002
+       Scholarship    0.0008 0.0003
+        Alcoholism    0.0007 0.0004
+          gender_M    0.0006 0.0001
+          Diabetes    0.0000 0.0001
+      hypertension   -0.0001 0.0002
+    disability_any   -0.0001 0.0000

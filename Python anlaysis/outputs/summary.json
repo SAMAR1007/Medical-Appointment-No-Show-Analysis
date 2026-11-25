@@ -1,0 +1,179 @@
+{
+  "audit": {
+    "rows": 110521,
+    "patients": 62298,
+    "appointment_date_min": "2016-04-29",
+    "appointment_date_max": "2016-06-08",
+    "age_min": 0,
+    "age_max": 115,
+    "age_over_100": 7,
+    "lead_min": 0,
+    "lead_max": 179,
+    "null_cells": 0,
+    "patient_id_precision_nulls": 5,
+    "duplicate_appointment_ids": 0,
+    "share_rows_same_patient_same_day": 0.14656038218981007,
+    "share_patients_with_repeat_visits": 0.3913127227198305,
+    "saturday_rows": 39
+  },
+  "overall": {
+    "no_show_rate": 0.2018982817745044,
+    "ci_low": 0.19954208156704473,
+    "ci_high": 0.20427520393840076,
+    "no_shows": 22314
+  },
+  "spearman": {
+    "age": -0.06122525747212326,
+    "lead": 0.28184919950715537
+  },
+  "sms": {
+    "crude_or": 1.8993657373443902,
+    "crude_ci": [
+      1.8429191609176636,
+      1.957541210001547
+    ],
+    "rate_sms": 0.27574544839637,
+    "rate_no_sms": 0.16697983715134795,
+    "share_sms_when_lead_le_2": 0.0,
+    "share_sms_when_lead_ge_3": 0.591159760750404,
+    "mh_pooled_or": 0.7734063812447873,
+    "mh_ci": [
+      0.7464055153938891,
+      0.8013839906240522
+    ],
+    "cmh_p": 0.0,
+    "breslow_day_p": 0.00037709902355342884,
+    "strata_used": 4
+  },
+  "neighbourhood": {
+    "n_neighbourhoods_ge100": 74,
+    "chi2": 493.01380949086627,
+    "p": 9.762671365155994e-61,
+    "dof": 80,
+    "cramers_v": 0.06678933805242344,
+    "n_significant_BH": 23,
+    "prior_strength_alpha_plus_beta": 270.4000904226819,
+    "highest": {
+      "Neighbourhood": "SANTOS DUMONT",
+      "n": 1276,
+      "rate": 0.2891849529780564,
+      "shrunk_rate": 0.27393586368587836
+    },
+    "lowest": {
+      "Neighbourhood": "SANTA MARTHA",
+      "n": 3131,
+      "rate": 0.15841584158415842,
+      "shrunk_rate": 0.16187876454881686
+    }
+  },
+  "risk_tiers": {
+    "chi2": 2630.4648550566117,
+    "p": 0.0,
+    "cramers_v": 0.154274393927441,
+    "history_effect": [
+      {
+        "level": "New patient",
+        "n": 66288,
+        "no_shows": 12844,
+        "rate": 0.19376055998069033,
+        "ci_low": 0.1907695266786184,
+        "ci_high": 0.19678708501665343
+      },
+      {
+        "level": "Prior no-show",
+        "n": 14114,
+        "no_shows": 3793,
+        "rate": 0.2687402578999575,
+        "ci_low": 0.2614904084805597,
+        "ci_high": 0.27611595867967165
+      },
+      {
+        "level": "Prior visits, all attended",
+        "n": 30119,
+        "no_shows": 5677,
+        "rate": 0.18848567349513595,
+        "ci_low": 0.18410862802864272,
+        "ci_high": 0.1929421715895601
+      }
+    ]
+  },
+  "new_patient_tier_by_lead": [
+    {
+      "lead": "Same Day",
+      "n": 24117,
+      "rate": 0.03748393249574988
+    },
+    {
+      "lead": "Short (1-3 Days)",
+      "n": 7795,
+      "rate": 0.2365618986529827
+    },
+    {
+      "lead": "Within a week",
+      "n": 9050,
+      "rate": 0.25082872928176797
+    },
+    {
+      "lead": "Long Lead (8+ days)",
+      "n": 25326,
+      "rate": 0.30901050304035377
+    }
+  ],
+  "history_known_at_booking_differs_share": 0.12861809067959934,
+  "logit": {
+    "pseudo_r2_mcfadden": 0.11675439005946808,
+    "n": 110521,
+    "n_patients_clusters": 62298
+  },
+  "neighbourhood_adjusted": {
+    "lr_stat": 330.1905960912118,
+    "df": 74,
+    "p": 4.7189175394254e-34,
+    "pseudo_r2_without": 0.11675439005946808,
+    "pseudo_r2_with": 0.11972401948131439
+  },
+  "booking_time_sensitivity": {
+    "auc_history_as_of_appointment_day": 0.7145815332055964,
+    "auc_history_known_at_booking": 0.7136634618743709
+  },
+  "models": {
+    "test_rows": 22530,
+    "test_prevalence": 0.198757212605415,
+    "train_rows": 87991,
+    "records": [
+      {
+        "model": "SQL risk tiers (rule-based)",
+        "roc_auc": 0.5942190032724677,
+        "auc_ci_low": 0.5869195448767726,
+        "auc_ci_high": 0.6016789753707797,
+        "pr_auc": 0.24380295118803053,
+        "brier": 0.15557903643674179,
+        "precision_top10pct": 0.2982689747003995,
+        "lift_top10pct": 1.5006699419383653,
+        "recall_top20pct": 0.2943278249218401
+      },
+      {
+        "model": "Logistic regression",
+        "roc_auc": 0.7145815332055964,
+        "auc_ci_low": 0.7074671538736685,
+        "auc_ci_high": 0.7219998935076183,
+        "pr_auc": 0.3408720693476564,
+        "brier": 0.14484805020519717,
+        "precision_top10pct": 0.38304482911673327,
+        "lift_top10pct": 1.9271996426976328,
+        "recall_top20pct": 0.3559624832514515
+      },
+      {
+        "model": "Gradient boosting",
+        "roc_auc": 0.7285583632792448,
+        "auc_ci_low": 0.720454646580538,
+        "auc_ci_high": 0.7362366899649723,
+        "pr_auc": 0.36036395398135185,
+        "brier": 0.14302182546135941,
+        "precision_top10pct": 0.40301819795827787,
+        "lift_top10pct": 2.0276909334524342,
+        "recall_top20pct": 0.37472085752568113
+      }
+    ]
+  }
+}
