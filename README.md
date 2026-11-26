@@ -22,8 +22,8 @@ Open `Noshow final.twbx` in Tableau Desktop
 | Chart | **Appointment Share by Risk Tier** — how the SQL tiers split the population |
 | Chart | **Top 15 Highest-Risk Neighbourhoods** — geographic hotspots |
 
-Live tableau link: https://public.tableau.com:9443/views/Noshowfinal/No-ShowRiskExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-
+Live tableau link: [https://public.tableau.com:9443/views/Noshowfinal/No-ShowRiskExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+](https://public.tableau.com/app/profile/samar.bist/viz/Noshowfinal/No-ShowRiskExecutiveOverview?publish=yes)
 ---
 
 ## SQL pipeline
