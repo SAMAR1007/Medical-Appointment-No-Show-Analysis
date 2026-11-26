@@ -117,10 +117,5 @@ Ordering includes `AppointmentID` so a patient with two appointments on the same
 
 [Medical Appointment No Shows](https://www.kaggle.com/datasets/joniarroba/noshowappointments) (Kaggle) — 110,527 appointment records from Brazilian public clinics, May–June 2016.
 
-## Limitations
 
-- Observational data: all results are associations, not causal effects. Neighbourhood, scholarship and SMS may stand in for unmeasured factors such as income, distance and transport.
-- About six weeks of appointments, so seasonality cannot be assessed; Saturday has only 39 rows and is not reliable.
-- 14.7% of rows share a patient and appointment date, which matters for same-day tie ordering in the history windows.
-- The SMS comparison has no observations for lead times under 3 days (a positivity violation), so nothing can be concluded there.
 - The risk tiers are rule-based and deliberately simple; a trained model performs better (Python companion).
