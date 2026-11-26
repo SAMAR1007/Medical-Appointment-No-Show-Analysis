@@ -101,6 +101,8 @@ Ordering includes `AppointmentID` so a patient with two appointments on the same
 ## Python companion (brief)
 
 `Python anlaysis/analysis.py` is a reproducible statistical validation of the SQL findings: chi-square effect sizes, Mantel–Haenszel adjustment for the SMS confound, cluster-robust logistic regression, a patient-grouped train/test split, and comparison of the SQL risk tiers against logistic regression and gradient boosting (AUC 0.594 for the rule-based tiers vs 0.715 and 0.729 for the models). It also quantifies the main limitation of the tier rules: new patients are checked first, so 60% of appointments never receive a lead-time rule. Full methodology and tables are documented in `Python anlaysis/README.md`.
+![Uploading fig6_model_evaluation.png…]()
+
 
 ---
 
