@@ -12,7 +12,7 @@ The core of the project is a reproducible **MySQL pipeline** that loads, cleans,
 
 **Dashboard: "No-Show Risk | Executive Overview"**
 
-Open `Noshow final.twbx` in Tableau Desktop (packaged workbook — the extract travels with the file, so no database connection is needed).
+Open `Noshow final.twbx` in Tableau Desktop
 
 | Zone | Contents |
 |---|---|
@@ -22,7 +22,7 @@ Open `Noshow final.twbx` in Tableau Desktop (packaged workbook — the extract t
 | Chart | **Appointment Share by Risk Tier** — how the SQL tiers split the population |
 | Chart | **Top 15 Highest-Risk Neighbourhoods** — geographic hotspots |
 
-The workbook reads an extract of the cleaned dataset (`Data/cleaned_data.csv` and `Data/v appointment-.csv`). To refresh it, replace those CSVs with fresh output from the SQL pipeline and update the extract's data source.
+Live tableau link: https://public.tableau.com:9443/views/Noshowfinal/No-ShowRiskExecutiveOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ---
 
